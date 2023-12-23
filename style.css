@@ -1,0 +1,791 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    color: #fff;
+    background: #09001d;
+    overflow: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+}
+.menu-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    margin-top: 16px;
+    margin-right: 10px; 
+    position: fixed;
+    z-index: 250; 
+    right: 10px; 
+    top: 10px; 
+  }
+
+
+  @media screen and (max-width: 720px) and (min-height: 1600px) {
+    .main {
+        min-height: 100vh;
+        background: url(https://c4.wallpaperflare.com/wallpaper/834/602/559/computer-keyboards-wallpaper-preview.jpg) no-repeat center center fixed;
+        background-size: contain;
+        pointer-events: auto;
+        transition: 0.3s ease;
+        overflow: hidden;
+    }
+}
+
+
+
+
+
+  .close-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 210px;
+    padding-top: 40px;
+    padding-bottom: 35px;
+    align-items: center; 
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+ 
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; 
+    width: 300px;
+    height: 100%;
+    background: #09001d; 
+    transition: right 0.3s ease-in-out;
+  }
+  
+  .sidebar.active {
+    right: 0; /* Reveals sidebar on screen */
+  }
+  
+  .sidebar-nav {
+    padding: 20px;
+  }
+.logo{
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 150px ;
+    font-weight: 700;
+} 
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 300; /* Ensure it's higher than the sidebar */
+    display: none; /* Initially hide it */
+}
+
+.sidebar.active + .menu-bar .close-icon {
+    display: block; /* Show the close icon when the sidebar is active */
+}
+
+.a-bt,
+.c-bt,
+.p-bt {
+  display: block; /* Change the display property to block */
+  text-align: center; /* Center-align the buttons */
+  width: 150px; /* Set a specific width for consistency */
+  border: 2px solid #fff; /* Add border for button visibility */
+  border-radius: 5px; /* Round the corners of the buttons */
+  text-decoration: none; /* Remove underlines */
+  color: #fff; /* Button text color */
+  background-color: transparent; /* Transparent background */
+  transition: background-color 0.3s, color 0.3s; /* Add smooth transition effects */
+}
+
+
+
+
+.a-bt{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 5px;
+    margin-top: 95px;
+    padding-left: 2px;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.a-bt:hover{
+    color: lightblue;
+}
+.p-bt{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 12px;
+    padding-top: 25px;
+    padding-left: 2px;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.p-bt:hover{
+    color: lightblue;
+}
+.c-bt{
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+   margin-left: 12px;
+    padding-top: 25px;
+    padding-left: 2px;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.c-bt:hover{
+    color: lightblue;
+}
+.bt:hover{
+    color: lightblue;
+}
+.abt{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(.9);
+    width: 500px;
+    background:linear-gradient(45deg,transparent,lightblue,transparent);
+    border-radius: 6px;
+    box-shadow: 10px 10px 10px black;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.abt.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+.abt h2{
+    font-size:50px;
+    color: black;
+        }
+.abt .deatil{
+            display: inline-block;
+            font-size: 18px;
+        color: black;
+        font-weight: 500;
+        margin-top: 5px;
+        padding: 15px 0 7px;
+        }
+        .abt .abt-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            padding: 15px 0 7px;
+                }
+                .abt .abt-btn .deatil-btn
+            {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 130px;
+                height: 45px;
+                background: transparent;
+                border: 2px solid black;
+                outline: none;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 16px;
+                color: black;
+                font-weight: 500;
+                box-shadow: 0 0 10px rgba(0,0,0,3);
+                cursor: pointer ;
+                transition: .3i;
+            }
+            .abt .abt-btn .deatil:nth-child(1){
+                background: transparent;
+                color: #333;
+            }
+            .abt .abt-btn .deatil-btn:nth-child(1):hover{
+                background: #333;
+                color: #fff;
+            }
+.cbt{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(.9);
+    width: 500px;
+    background:white;
+    border-radius: 6px;
+    box-shadow: 10px 10px 10px black;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.cbt.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+.cbt h2{
+    display: flex;
+    justify-content: center;
+    color: linear-gradient(45deg,transparent,orange,transparent);
+    font-size:50px;
+    color: black;
+        }
+        .pro{
+            display: flex;
+            align-items: center;
+            border-top: 1px solid black;
+            margin-top: 10px;
+            padding: 15px 0 7px;
+        }
+       .pro .l1{
+        padding-left: 25px;
+        padding-right: 130px;
+       }
+      
+.cbt .con{
+            display: inline-block;
+            font-size: 18px;
+        color:black;
+        font-weight: 500;
+        margin-top: 5px;
+        padding: 15px 0 7px;
+        }
+        .cbt .cbt-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            padding: 15px 0 7px;
+                }
+                .cbt .cbt-btn .con-btn
+            {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 130px;
+                height: 45px;
+                background: whitesmoke;
+                border: 2px solid black;
+                outline: none;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 16px;
+                color: black;
+                font-weight: 500;
+                box-shadow: 0 0 10px rgba(0,0,0,3);
+                cursor: pointer ;
+                transition: .3i;
+            }
+            .cbt .cbt-btn .con:nth-child(1){
+                background: transparent;
+                color: #333;
+            }
+            .cbt .cbt-btn .con-btn:nth-child(1):hover{
+                background: #333;
+                color: #fff;
+            }
+    .main {
+        min-height: 100vh;
+        background: url(https://c4.wallpaperflare.com/wallpaper/834/602/559/computer-keyboards-wallpaper-preview.jpg);
+        background-size: cover;
+        background-position: center;
+        pointer-events: auto;
+        transition: 0.3s ease;
+        overflow: hidden;
+      }
+      
+.main.active{
+    filter: blur(6px);
+    pointer-events: none;
+}
+.container{
+    display: flex;
+    height: 100vh;
+    width: 200%;
+}
+
+.home{
+    position: relative;
+    left: -50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h-content{
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.h-content h1{
+    font-size: 70px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0,0,0,3);
+}
+
+.h-content .start{
+    width: 150px;
+    height:55px;
+    margin: 20px;
+    background: #333;
+    border: 2px solid #fff;
+    outline:none;
+    border-radius: 8px;
+    box-shadow: 0 0 10px whitesmoke;
+    font-size: 18px;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    font-weight: 60px;
+    cursor: pointer;
+    transition: .3i;
+    }
+    .h-content .start:hover{
+        background: linear-gradient(45deg,transparent,lightblue,transparent);
+    border-color: aquamarine;
+    box-shadow: 0 0 10px aquamarine;
+    }
+    .info{
+        position: absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(.9);
+        width: 500px;
+        background: wheat;
+        border-radius:15px;
+        padding: 10px 25px;
+        opacity: 0;
+        pointer-events: none;
+        transition: .3s ease;
+    }
+    .info.active{
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%,-50%) scale(1);
+    }
+
+
+
+    .info h2{
+font-size:50px;
+color: black;
+    }
+    .info .rule{
+        display: inline-block;
+        font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    
+    margin-top: 10px;
+    padding: 15px 0 7px;
+    }
+    .info .btn{
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-top: 1px solid #999;
+margin-top: 10px;
+padding: 15px 0 7px;
+    }
+    .info .btn .rule-btn
+{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0,0,0,3);
+    cursor: pointer ;
+    transition: .3i;
+}
+.info .btn .rule-btn:nth-child(1){
+    background: #333;
+    color: whitesmoke;
+}
+.info .btn .rule-btn:nth-child(1):hover{
+    background: linear-gradient(45deg,transparent,red,transparent);
+    border-color: red;
+    color: #09001d;
+    box-shadow: 0 0 10px red;
+}
+.info .btn .rule-btn:nth-child(2):hover{
+    background: linear-gradient(45deg,transparent,lightblue,transparent);
+    border-color: aquamarine;
+    color: white;
+    box-shadow: 0 0 10px aquamarine;
+    }
+
+
+.exit-btn{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    width: 130px;
+    height: 45px;
+    background: black;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0,0,0,3);
+    cursor: pointer ;
+    transition: .3i;
+}
+.exit-btn:hover{
+    background: silver;
+    border-color: black;
+    color: black;
+}
+.quiz{
+position: relative;
+left:-50%;
+width: 100%;
+background: #09001d;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 600;
+transition: .5s ease-in-out;
+transition-delay: .25s;
+}
+.quiz.active{
+    left: 0;
+}
+.quiz .box{
+    position: relative;
+    width: 500px;
+    background: transparent;
+    border: 2px solid orange;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.9);
+    transition: .3s ease;
+    transition-delay: 0s;
+}
+.quiz .box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+    transition: 1s ease;
+    transition-delay: 1s;
+}
+
+.box h1{
+    font-size: 32px;
+    text-align: center;
+    background:linear-gradient(45deg,transparent,orange,transparent);
+    border-radius: 6px;
+}
+.box .head{
+    display: flex;
+    justify-content: space-between;
+   align-items: center;
+   padding: 20px 0;
+   border-bottom: 2px solid orange;
+   margin-bottom: 30px;
+}
+.quiz .head span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.head .score{
+    background: orange;
+    border-radius: 3px;
+    padding: 7px;
+}
+.box .question{
+    font-size: 24px;
+    font-weight: 600;
+}
+.opt-list .opt{
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid rgba(225,225,225,.2);
+    border-radius: 4px;
+    font-size: 17px;
+    margin: 15px 0;
+    cursor: pointer;
+    transition: .3s;
+}
+.opt-list .opt:hover{
+    background: orange;
+    border-color: rgba(225,225,225,.1);
+}
+.opt-list .opt.correct{
+    background: #09001d;
+    color: #00a63d;
+    border-color: #00a63d;
+}
+.opt-list .opt.incorrect{
+    background: #09001d;
+    color: #a60045;
+    border-color: #a60045;
+}
+.opt-list .opt.disabled{
+   pointer-events: none;
+}
+.box .quiz-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid orange;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+.quiz-footer .total{
+    font-size: 15px;
+    font-weight: 600;
+}
+.quiz-footer .next{
+    width: 100px;
+    height: 45px;
+    background: rgba(225,225,225,.1);
+    border: 2px solid rgba(225,225,225,.1);
+    outline: none;
+    border-radius: 6px;
+    font-size: 15px;
+    color: rgba(225,225,225,.3);
+    font-weight: 600;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .3s;
+}
+.quiz-footer .next.active:hover{
+    background: darkgoldenrod;
+    border-color: rgba(225,225,225,.1);  
+    color: black; 
+}
+.quiz-footer .next.active{
+    pointer-events: auto;
+    background: orange;
+    border-color: orange;
+    color: #09001d;
+}
+.quiz .result-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(.9);
+    width: 500px;
+    background-color: transparent;
+    border: 2px solid orange;
+    border-radius: 6px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+.quiz .result-box.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(.9);
+}
+
+.result-box h2{
+    font-size: 52px;
+}
+.result-box .percent-container{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+.percent-container .circular{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: conic-gradient(orange 3.6deg,rgba(255,255,255,.1) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.percent-container .circular::before{
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    background: #09001d;
+    border-radius: 50%;
+}
+.circular .value{
+    position: relative;
+    font-size: 35px;
+    font-weight: 600;
+}
+.percent-container .score-text{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.percent-container .remark{
+    font-size: 22px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.result-box .buttons{
+    display: flex;
+}
+.buttons button{
+    width: 130px;
+    height: 47px;
+    background: orange;
+    border: 2px solid orange;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+.buttons button:nth-child(1):hover{
+    background: darkgoldenrod;
+    border-color: orange;
+}
+.buttons button:nth-child(2){
+    background: transparent;
+    color: orange;
+}
+.buttons button:nth-child(2):hover{
+    background: darkgoldenrod;
+    color: black;
+}
+
+
+
+
+.pbt{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(.9);
+    width: 500px;
+    height: 500px;
+    background:white;
+    border-radius: 6px;
+    box-shadow: 10px 10px 10px black;
+    padding: 10px 25px;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+    overflow-y: scroll;
+}
+.pbt.active{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%) scale(1);
+}
+.pbt h2{
+    display: flex;
+    justify-content: center;
+    color: linear-gradient(45deg,transparent,orange,transparent);
+    font-size:50px;
+    color: black;
+        }
+        .pbt h3{
+            font-size:21px;
+            color: black;
+                align-items: center;
+                border-top: 1px solid #999;
+                margin-top: 15px;
+                padding: 20px 0 7px;
+                    
+                }
+.pbt .pon{
+            display: inline-block;
+            font-size: 18px;
+        color:black;
+        font-weight: 500;
+        margin-top: 5px;
+        padding: 15px 0 7px;
+        }
+        .pbt .pbt-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            padding: 15px 0 7px;
+                }
+                .pbt .pbt-btn .pon-btn
+            {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                width: 130px;
+                height: 45px;
+                background: whitesmoke;
+                border: 2px solid black;
+                outline: none;
+                border-radius: 6px;
+                text-decoration: none;
+                font-size: 16px;
+                color: black;
+                font-weight: 500;
+                box-shadow: 0 0 10px rgba(0,0,0,3);
+                cursor: pointer ;
+                transition: .3i;
+            }
+            .pbt .pbt-btn .pon:nth-child(1){
+                background: transparent;
+                color: #333;
+            }
+            .pbt .pbt-btn .pon-btn:nth-child(1):hover{
+                background: #333;
+                color: #fff;
+            }
